@@ -30,30 +30,22 @@ The **MicroStudio Extension** for Visual Studio Code is a custom extension that 
 ### Steps
 
 1. Clone this repository:
-
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/CodingButter/microstudio-vscode
    ```
-
 2. Install dependencies:
-
    ```bash
-   cd <repository-folder>
+   cd microstudio-vscode
    npm install
    ```
-
 3. Build the extension:
-
    ```bash
    npm run build
    ```
-
 4. Open the project in VS Code:
-
    ```bash
    code .
    ```
-
 5. Run the extension:
    - Press `F5` to open a new VS Code window with the extension loaded.
 
@@ -89,37 +81,27 @@ This project is built with:
 - `npm run watch`: Watches for file changes and rebuilds automatically.
 - `npm run lint`: Runs ESLint to check for code quality issues.
 
-1. Create a new branch:
+## Known Issues
 
+- **Webview Loading**: Ensure the `webview-ui/build` directory contains the compiled assets (`index.js`, `index.css`). If missing, run `npm run build`.
+- **View Not Showing**: Verify that the `viewType` in `package.json` matches the `WebviewViewProvider` ID.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-
-2. Commit your changes:
-
+3. Commit your changes:
    ```bash
    git commit -m "Add your message here"
    ```
-
-3. Push to your branch:
-
+4. Push to your branch:
    ```bash
    git push origin feature/your-feature-name
    ```
-
-4. Commit your changes:
-
-   ```bash
-   git commit -m "Add your message here"
-   ```
-
-5. Push to your branch:
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. Open a pull request.
+5. Open a pull request.
 
 ## License
 
