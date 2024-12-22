@@ -1,71 +1,130 @@
-# microstudio README
+# MicroStudio Extension for VS Code
 
-This is the README for your extension "microstudio". After writing up a brief description, we recommend including the following sections.
+The **MicroStudio Extension** for Visual Studio Code is a custom extension that integrates the [MicroStudio](https://microstudio.dev) game engine with the power of VS Code. This extension allows you to manage and edit your MicroStudio projects directly from the VS Code editor, leveraging the MicroStudio API to interact with your projects seamlessly.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Project Management
 
-For example if there is an image subfolder under your extension project workspace:
+- **View Projects**: Log in to your MicroStudio account and browse your available projects.
+- **Select a Project**: Pick a project to view its folders and assets.
 
-\!\[feature X\]\(images/feature-x.png\)
+### File Operations
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **File Viewing and Editing**: Load files from your MicroStudio projects directly into VS Code for editing.
+- **Live Sync**: Changes made in VS Code are automatically pushed to the MicroStudio API, keeping your project up to date without needing to save manually.
 
-## Requirements
+### Integration
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- **Custom Sidebar View**: Adds a dedicated MicroStudio view in the Activity Bar for managing your projects.
+- **Webview for Rich Interactions**: The extension provides a web-based panel for enhanced functionality, powered by React and TailwindCSS.
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Prerequisites
 
-For example:
+1. Install [Visual Studio Code](https://code.visualstudio.com/).
+2. Ensure you have a MicroStudio account.
+3. Node.js and npm installed on your system.
 
-This extension contributes the following settings:
+### Steps
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+1. Clone this repository:
 
-## Known Issues
+   ```bash
+   git clone <repository-url>
+   ```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+2. Install dependencies:
 
-## Release Notes
+   ```bash
+   cd <repository-folder>
+   npm install
+   ```
 
-Users appreciate release notes as you update your extension.
+3. Build the extension:
 
-### 1.0.0
+   ```bash
+   npm run build
+   ```
 
-Initial release of ...
+4. Open the project in VS Code:
 
-### 1.0.1
+   ```bash
+   code .
+   ```
 
-Fixed issue #.
+5. Run the extension:
+   - Press `F5` to open a new VS Code window with the extension loaded.
 
-### 1.1.0
+## Usage
 
-Added features X, Y, and Z.
+1. Open the MicroStudio panel from the Activity Bar.
+2. Log in using your MicroStudio account.
+3. Browse your projects and select one to manage.
+4. Open files for editing; your changes are synced back to MicroStudio automatically.
+
+## Development
+
+This project is built with:
+
+- **TypeScript**: For type-safe development.
+- **React**: For the webview UI.
+- **TailwindCSS**: For styling the webview.
+- **Vite**: For building the webview assets.
+
+### Project Structure
+
+- `src/`: Main source code for the VS Code extension.
+  - `extension.ts`: Entry point for the extension.
+  - `providers/`: Contains the `WebviewViewProvider` implementation.
+  - `utilities.ts`: Helper functions for resource management.
+- `webview-ui/`: React-based UI for the webview.
+  - `src/`: React components and application logic.
+  - `build/`: Compiled assets for the webview.
+
+### Commands
+
+- `npm run build`: Builds the TypeScript code and webview assets.
+- `npm run watch`: Watches for file changes and rebuilds automatically.
+- `npm run lint`: Runs ESLint to check for code quality issues.
+
+1. Create a new branch:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Commit your changes:
+
+   ```bash
+   git commit -m "Add your message here"
+   ```
+
+3. Push to your branch:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+4. Commit your changes:
+
+   ```bash
+   git commit -m "Add your message here"
+   ```
+
+5. Push to your branch:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+For more details on MicroStudio, visit the [official website](https://microstudio.dev).
